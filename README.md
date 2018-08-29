@@ -13,3 +13,16 @@ werden.
 
 Eigene Konfigurationen können in `/usr/local/addons/redis/etc/local.conf` vorgenommen werden, der Inhalt dieser Datei
 wird bei Updates nicht überschrieben.
+
+Redis ist eine schnelle Datenbank, die einfache Datensätze aufnehmen kann und alle Inhalte im Hauptspeicher hält. Dadurch werden alle Kommandos in höchster Geschwindigkeit ausgeführt. Redis ist keine SQL-Datenbank! Die Daten aus dem Hauptspeicher können auf einem Speichermedium abgelegt werden. 
+Redis wird hauptsächlich als einfacher schneller Datenspeicher für Datenhalt und, Caches oder für Message broker eingesetzt.
+
+Die Datensätze bestehen immer aus einem Schlüssel (Beispiel: "Messpunkt-201808011543") und einem Wert (Beispiel: "34,5 Grad"). Schlüssel und Wert sind üblicherweise vom Typ String.
+Kommandos sind z.B. get, set und del.
+Beispiel: 
+redis> set Messpunkt-201808011543 34,5 Grad
+OK
+redis> get Messpunkt-201808011543
+34,5 Grad
+redis> del Messpunkt-201808011543
+(integer) 1
